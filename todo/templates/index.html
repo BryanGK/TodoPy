@@ -1,6 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
 <h1>Todos</h1>
 <ul>
     {% for todo in todos %}
-        <li>{{ todo.todo }} | Due date: {{ todo.due_date }} <input type="checkbox" value={{ todo.is_completed }}></li>
+        <li>{{ todo.todo }} | Due date: {{ todo.due_date }} <input type="checkbox" {% if todo.is_completed %} checked {% endif %}></li>
     {% endfor %}
 </ul>
+{% endblock %}
